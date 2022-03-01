@@ -27,6 +27,14 @@ export default {
 .item {
   border: 2px solid var(--color);
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  figure {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #333;
+  }
   h6 {
     font-size: 20px;
     font-weight: 300;

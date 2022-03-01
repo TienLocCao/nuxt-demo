@@ -1,10 +1,12 @@
 <template>
   <page-container>
     <div class="product">
-      <div class="head-view-list mb-4">
-        <h3 class="page-title">Featured Products</h3>
-        <nuxt-link to="/products">View All</nuxt-link>
-      </div>
+      <header-main>
+        Featured Products
+        <template #action>
+          <nuxt-link to="/products">View All</nuxt-link>
+        </template>
+      </header-main>
       <div class="product_list">
         <product-item
           v-for="item in products"
@@ -20,10 +22,12 @@
 <script>
 import PageContainer from '@/components/Containers/PageContainer.vue'
 import ProductItem from '@/components/Products/item.vue'
+import HeaderMain from '@/components/Common/HeaderMain.vue'
 export default {
   name: 'IndexPage',
   components: {
     PageContainer,
+    HeaderMain,
     ProductItem,
   },
   layout: 'index',

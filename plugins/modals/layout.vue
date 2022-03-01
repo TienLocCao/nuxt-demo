@@ -9,6 +9,9 @@
           class="modal__mask"
         >
           <div class="modal__body">
+            <div class="close" @click="close()">
+              <img src="~/assets/icons/close.svg" />
+            </div>
             <slot :payload="payload" />
           </div>
         </div>
@@ -47,6 +50,7 @@ export default {
   },
   methods: {
     open(params) {
+      this.payload = params.payload
       this.visible = true
     },
     close() {
@@ -74,6 +78,15 @@ export default {
   padding-bottom: 10px;
   &__body {
     background: #fff;
+    width: 450px;
+    position: relative;
+    padding: 16px;
+    .close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+    }
   }
 }
 </style>

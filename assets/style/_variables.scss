@@ -1,0 +1,13 @@
+:root {
+  --max-width: 768px;
+
+  --font-basic: 16px;
+  --heading-2: 26px;
+}
+
+@media screen and (max-width: var(--max-width)) {
+  :root {
+    --font-basic: 2vw;
+    --heading-2: 2.4vw;
+  }
+}

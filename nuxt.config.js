@@ -18,7 +18,7 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/modals/v-modal.js'],
+  plugins: ['@/plugins/modals/v-modal.js', '@/plugins/directive.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -76,4 +76,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  env: {
+    baseApiUrl:
+      process.env.BASE_API_URL ||
+      'https://fir-page-a18be-default-rtdb.firebaseio.com/',
+  },
 }
