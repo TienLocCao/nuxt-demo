@@ -15,6 +15,7 @@ export default {
     buttonClasses() {
       return {
         [`btn btn--${this.color}`]: true,
+        [`fs--font-basic`]: true,
       }
     },
     buttonProps() {

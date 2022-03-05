@@ -11,6 +11,13 @@
           name="title"
           placeholder="Title.."
         />
+        <div class="invalid-feedback">
+          <span
+            v-if="!$v.products.title.required"
+            :class="{ show: !$v.products.title.required }"
+            >Title is required!</span
+          >
+        </div>
       </div>
       <div class="form-group">
         <label for="img">Image</label>
@@ -21,6 +28,13 @@
           name="img"
           placeholder="Image.."
         />
+        <div class="invalid-feedback">
+          <span
+            v-if="!$v.products.img.required"
+            :class="{ show: !$v.products.img.required }"
+            >Image is required!</span
+          >
+        </div>
       </div>
       <div class="form-group form-group--bottom">
         <base-button
@@ -41,6 +55,7 @@
 
 <script>
 import axios from 'axios'
+import { required } from 'vuelidate/lib/validators'
 import BaseButton from '@/components/Elements/BaseButton.vue'
 export default {
   components: { BaseButton },
@@ -65,9 +80,20 @@ export default {
       dataDefault: '{"title":"","img":""}',
     }
   },
+  validations() {
+    return {
+      products: {
+        title: {
+          required,
+        },
+        img: {
+          required,
+        },
+      },
+    }
+  },
   watch: {
     data(val) {
-      console.log('val', val)
       if (val) {
         this.title = 'Edit Products'
         this.products = {
@@ -86,6 +112,13 @@ export default {
       }
       this.dataDefault = JSON.stringify(this.products)
     },
+  },
+  created() {
+    this.abc = false
+    this.$nextTick(() => {
+      this.$v.$reset()
+      this.abc = true
+    })
   },
   methods: {
     add() {
@@ -174,6 +207,18 @@ export default {
         font-size: 16px;
         &:hover {
           opacity: 0.8;
+        }
+      }
+      .invalid-feedback span {
+        color: var(--error);
+        font-size: 12px;
+        transform: translateY(-8px);
+        transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+        opacity: 0;
+        &.show {
+          transform: translateY(0);
+          transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+          opacity: 1;
         }
       }
     }

@@ -3,7 +3,7 @@
     <figure class="p-sec-03__img01">
       <img :src="img" alt="thumbnail" class="img_switch" />
     </figure>
-    <h6>{{ title }}</h6>
+    <h6 class="fs--heading-3">{{ title }}</h6>
   </div>
 </template>
 
@@ -36,7 +36,6 @@ export default {
     background: #333;
   }
   h6 {
-    font-size: 20px;
     font-weight: 300;
   }
 }

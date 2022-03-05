@@ -1,6 +1,6 @@
 <template>
   <div class="main-header mb-4">
-    <h3 class="main-header__title">
+    <h3 class="main-header__title fs--heading-2">
       <slot></slot>
     </h3>
     <div class="main-header__action">
@@ -21,7 +21,6 @@ export default {
   justify-content: space-between;
   align-items: flex-end;
   &__title {
-    font-size: 26px;
     color: var(--primary);
   }
   a {

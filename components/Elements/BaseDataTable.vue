@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <table class="styled-table">
+  <div class="table">
+    <table class="styled-table fs--small-1">
       <thead>
         <slot name="header" :props="headers">
           <tr>
@@ -103,10 +103,13 @@ export default {
 </script>
 
 <style lang="scss">
+.table {
+  margin: 25px 0;
+  overflow: auto;
+}
 .styled-table {
   border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
+
   font-family: sans-serif;
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);

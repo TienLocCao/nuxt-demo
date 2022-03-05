@@ -124,6 +124,11 @@ export default {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
   }
 }
 </style>

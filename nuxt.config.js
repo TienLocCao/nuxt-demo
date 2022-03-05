@@ -14,11 +14,15 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/style/main.scss'],
   styleResources: {
-    scss: ['~/assets/style/_color.scss'],
+    scss: ['~/assets/style/_color.scss', '~/assets/style/_variables.scss'],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/modals/v-modal.js', '@/plugins/directive.js'],
+  plugins: [
+    '@/plugins/modals/v-modal.js',
+    '@/plugins/directive.js',
+    '@/plugins/index.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
